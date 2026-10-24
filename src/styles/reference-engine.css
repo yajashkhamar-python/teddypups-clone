@@ -1147,5 +1147,29 @@ html[data-pup] .tp-home[data-visited=true] .tp-house__door{transform:rotateY(-10
 .tp-sticker-chip{border:2px solid var(--color-cocoa);background:var(--color-milk);min-height:2.75rem;transition:background-color .25s, color .25s, rotate .35s var(--ease-pounce), translate .35s var(--ease-pounce), box-shadow .25s;border-radius:999px;padding:.45rem 1rem;font-size:.95rem;font-weight:650;box-shadow:2px 3px #2a170e24}
 .tp-sticker-chip:hover{background:var(--color-honey-soft);translate:0 -1px}
 .tp-sticker-chip:active{translate:0 1px;box-shadow:0 0 #2a170e24}
-.tp-sticker-chip[aria-pressed=true]{background:var(--color-cocoa);color:var(--color-milk);rotate:-2deg;box-shadow:1px 2px #2a170e40}
 .tp-polaroid .tp-gone-stamp{animation:linear both tp-stamp-thump;animation-timeline:view();animation-range:entry 30% cover 40%}
+
+/* PUPPIES PAGE AUTHENTIC LAYOUT & PHOTO VISIBILITY OVERRIDES */
+.tp-sketchbook > .gutter,
+.tp-gone-strip > .gutter {
+  max-width: 1400px !important;
+  width: 100% !important;
+}
+
+.tp-sketch__photo {
+  border-radius: 50% !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+  overflow: hidden !important;
+  background-color: var(--color-honey-soft) !important;
+}
+
+.tp-sketch__photo img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  border-radius: 50% !important;
+  opacity: 1 !important;
+}
