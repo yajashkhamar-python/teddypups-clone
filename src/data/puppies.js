@@ -1,4 +1,7 @@
+
+// All 20 reference puppies with their exact IDs, images, tags, status, and breed categorization
 export const puppies = [
+  // 15 AVAILABLE PUPPIES
   {
     id: "maltipoo-max-male",
     name: "Max",
@@ -10,20 +13,12 @@ export const puppies = [
     origin: "imported",
     tagline: "Friendly, fluffy teddy bear temperament",
     image: "https://puppy.instabizweb.com/media/Z0ToauDx7Eve/5fffe4d022/b942a5_4b8cfb8204d24eadaf524332aba1dc15-mv2.webp",
-    gallery: [
-      "https://puppy.instabizweb.com/media/Z0ToauDx7Eve/5fffe4d022/b942a5_4b8cfb8204d24eadaf524332aba1dc15-mv2.webp",
-      "https://puppy.instabizweb.com/media/gAaGwoGej2g6/5523e884dd/b942a5_50f0ae67c9ff437d911597d52a9e63b3-mv2.jpg"
-    ],
+    gallery: ["https://puppy.instabizweb.com/media/Z0ToauDx7Eve/5fffe4d022/b942a5_4b8cfb8204d24eadaf524332aba1dc15-mv2.webp"],
     hasVideo: true,
-    wash: "#bfddf5",
-    tilt: "-0.8deg",
+    wash: "#f2be6b",
+    tilt: "0.36deg",
     description: "Max is a gorgeous apricot teacup Maltipoo boy with an extremely affectionate personality. Exceptionally small, playful and gentle with children and other pets.",
-    features: [
-      "Microchipped with ISO certificate",
-      "Up-to-date vaccinations & health card",
-      "Government veterinary health check",
-      "Starter travel kit included"
-    ]
+    features: ["Microchipped with ISO certificate", "Up-to-date vaccinations & health card", "Government veterinary health check", "Starter travel kit included"]
   },
   {
     id: "korean-teacup-maltipoo-female",
@@ -33,22 +28,15 @@ export const puppies = [
     gender: "girl",
     age: "2 months",
     status: "available",
-    origin: "imported",
+    origin: "korean",
     tagline: "Ultra-compact face with silky coat",
     image: "https://puppy.instabizweb.com/media/gAaGwoGej2g6/5523e884dd/b942a5_50f0ae67c9ff437d911597d52a9e63b3-mv2.jpg",
-    gallery: [
-      "https://puppy.instabizweb.com/media/gAaGwoGej2g6/5523e884dd/b942a5_50f0ae67c9ff437d911597d52a9e63b3-mv2.jpg"
-    ],
+    gallery: ["https://puppy.instabizweb.com/media/gAaGwoGej2g6/5523e884dd/b942a5_50f0ae67c9ff437d911597d52a9e63b3-mv2.jpg"],
     hasVideo: true,
-    wash: "#bfddf5",
-    tilt: "0.7deg",
+    wash: "#fbe3b4",
+    tilt: "-0.45deg",
     description: "A breathtaking Korean line teacup Maltipoo female. Tiny button nose, large expressive eyes, and dense hypoallergenic coat.",
-    features: [
-      "Authentic Korean bloodline",
-      "Microchipped and passport ready",
-      "Full veterinarian wellness inspection",
-      "Complimentary puppy luxury starter pack"
-    ]
+    features: ["Authentic Korean bloodline", "Microchipped and passport ready", "Full veterinarian wellness inspection", "Complimentary puppy luxury starter pack"]
   },
   {
     id: "korean-teacup-poodle-female",
@@ -58,47 +46,33 @@ export const puppies = [
     gender: "girl",
     age: "2 months",
     status: "available",
-    origin: "imported",
-    tagline: "Rare silver beige shade with high intelligence",
+    origin: "korean",
+    tagline: "Tiny red teddy poodle with huge charm",
     image: "https://puppy.instabizweb.com/media/xeMJCapr5vcU/e618c653b2/b942a5_14376a216177484dbbb27995d0f6aeb7-mv2.jpg",
-    gallery: [
-      "https://puppy.instabizweb.com/media/xeMJCapr5vcU/e618c653b2/b942a5_14376a216177484dbbb27995d0f6aeb7-mv2.jpg"
-    ],
+    gallery: ["https://puppy.instabizweb.com/media/xeMJCapr5vcU/e618c653b2/b942a5_14376a216177484dbbb27995d0f6aeb7-mv2.jpg"],
     hasVideo: false,
-    wash: "#bfddf5",
-    tilt: "-0.4deg",
-    description: "Elegant and exceptionally smart Korean teacup poodle girl. Non-shedding, super loving, and already shows quick crate responsiveness.",
-    features: [
-      "International passport & documentation",
-      "Complete deworming & vaccination protocol",
-      "1-year genetic health guarantee",
-      "Doorstep delivery or showroom pickup"
-    ]
+    wash: "#f9cdbf",
+    tilt: "0.52deg",
+    description: "Rich mahogany red teacup poodle with teddy bear head proportions. Extremely smart, calm and already paper-trained.",
+    features: ["Hypoallergenic and non-shedding", "Complete puppy health passport", "Vet-cleared with verified pedigree", "24/7 post-adoption care support"]
   },
   {
     id: "maltipoo-cavapoo-male",
     name: "Maltipoo & Cavapoo",
-    breed: "Maltipoo & Cavapoo Pair",
-    breedCategory: "cavapoo",
+    breed: "Maltipoo & Cavapoo",
+    breedCategory: "maltipoo",
     gender: "boy",
     age: "3 months Maltipoo & 2 months Cavapoo",
     status: "available",
-    origin: "local",
-    tagline: "Two adorable best friends ready for loving homes",
+    origin: "imported",
+    tagline: "Double bundle of joy looking for a home together or apart",
     image: "https://puppy.instabizweb.com/media/YQhey4j7uWvZ/3ea10db6c1/b942a5_7ce7e7bd18424b6c8fb16dd30113ade2-mv2.jpg",
-    gallery: [
-      "https://puppy.instabizweb.com/media/YQhey4j7uWvZ/3ea10db6c1/b942a5_7ce7e7bd18424b6c8fb16dd30113ade2-mv2.jpg"
-    ],
+    gallery: ["https://puppy.instabizweb.com/media/YQhey4j7uWvZ/3ea10db6c1/b942a5_7ce7e7bd18424b6c8fb16dd30113ade2-mv2.jpg"],
     hasVideo: true,
     wash: "#f2be6b",
-    tilt: "1.2deg",
-    description: "Available individually or together! Super friendly, cuddly and accustomed to home environments.",
-    features: [
-      "Health records verified",
-      "Microchipped",
-      "Vaccinated to age",
-      "Available for viewing today in Downtown Dubai"
-    ]
+    tilt: "-0.6deg",
+    description: "Two sweet teddy bear siblings with luxurious wavy coats and docile temperaments. Perfect companions for any apartment or villa.",
+    features: ["Fully health-screened & vaccinated", "Microchipped with travel docs", "Puppy nursery raised with social training", "Lifetime advice & concierge access"]
   },
   {
     id: "toy-poodle-male-female",
@@ -108,22 +82,15 @@ export const puppies = [
     gender: "boy & girl",
     age: "2 months",
     status: "available",
-    origin: "local",
-    tagline: "Playful teddy bear curls with cheerful nature",
+    origin: "imported",
+    tagline: "Adorable curly chocolate brother & sister",
     image: "https://puppy.instabizweb.com/media/vMu0BPvkAZ-j/c65e53967d/b942a5_0b2c0c0d178c4005acbe28725a5ea573-mv2.jpg",
-    gallery: [
-      "https://puppy.instabizweb.com/media/vMu0BPvkAZ-j/c65e53967d/b942a5_0b2c0c0d178c4005acbe28725a5ea573-mv2.jpg"
-    ],
+    gallery: ["https://puppy.instabizweb.com/media/vMu0BPvkAZ-j/c65e53967d/b942a5_0b2c0c0d178c4005acbe28725a5ea573-mv2.jpg"],
     hasVideo: false,
-    wash: "#bfddf5",
-    tilt: "1.8deg",
-    description: "Pair of sweet Toy Poodle puppies raised in pristine conditions. Healthy, active, and eager to bond.",
-    features: [
-      "Ready for immediate pickup or delivery in UAE",
-      "Full clinical health report",
-      "Puppy food supply starter kit",
-      "Vaccination passport"
-    ]
+    wash: "#fbe3b4",
+    tilt: "0.41deg",
+    description: "Sweet curly toy poodles with affectionate temperaments and compact conformation.",
+    features: ["Vaccinated and dewormed", "Vet checked with passport", "Hypoallergenic coat", "Immediate delivery available in Dubai"]
   },
   {
     id: "maltipoo-female-2",
@@ -131,47 +98,35 @@ export const puppies = [
     breed: "Maltipoo",
     breedCategory: "maltipoo",
     gender: "girl",
-    age: "2 months",
+    age: "3 months",
     status: "available",
     origin: "imported",
-    tagline: "Honey apricot teacup beauty",
+    tagline: "Gentle cream Maltipoo girl with soft teddy curl",
     image: "https://puppy.instabizweb.com/media/3WJNmn6VVgVu/732f779474/b942a5_2b5dcece361b4589890ae920c66a1b70-mv2.jpg",
-    gallery: [
-      "https://puppy.instabizweb.com/media/3WJNmn6VVgVu/732f779474/b942a5_2b5dcece361b4589890ae920c66a1b70-mv2.jpg"
-    ],
-    hasVideo: false,
-    wash: "#f9b9a6",
-    tilt: "-1.1deg",
-    description: "Tiny baby doll face with expressive dark eyes. Super calm and cuddly disposition.",
-    features: [
-      "Health certified by certified veterinary clinic",
-      "Microchip registered",
-      "Dewormed and up to date with initial shots"
-    ]
+    gallery: ["https://puppy.instabizweb.com/media/3WJNmn6VVgVu/732f779474/b942a5_2b5dcece361b4589890ae920c66a1b70-mv2.jpg"],
+    hasVideo: true,
+    wash: "#f9cdbf",
+    tilt: "-0.32deg",
+    description: "Delightful cream Maltipoo female puppy with bright eyes and loving nature.",
+    features: ["Microchipped", "Health certified", "Socialized in nursery", "Doorstep delivery"]
   },
   {
     id: "pomeranian-female",
     name: "Pomeranian",
-    breed: "Teacup Pomeranian",
+    breed: "Pomeranian",
     breedCategory: "pomeranian",
     gender: "girl",
-    age: "2.5 months",
+    age: "3 months",
     status: "available",
-    origin: "local",
-    tagline: "Snowball fluff with pure white coat",
+    origin: "imported",
+    tagline: "Fluffy panda-face black and white Pomeranian girl",
     image: "https://puppy.instabizweb.com/media/3yOfnmoyPooH/81e0c7e00c/b942a5_556841b9a73942e5a9d782a683f3bc68-mv2.jpg",
-    gallery: [
-      "https://puppy.instabizweb.com/media/3yOfnmoyPooH/81e0c7e00c/b942a5_556841b9a73942e5a9d782a683f3bc68-mv2.jpg"
-    ],
-    hasVideo: true,
+    gallery: ["https://puppy.instabizweb.com/media/3yOfnmoyPooH/81e0c7e00c/b942a5_556841b9a73942e5a9d782a683f3bc68-mv2.jpg"],
+    hasVideo: false,
     wash: "#f2be6b",
-    tilt: "0.9deg",
-    description: "Stunning double coat, compact body, and charming personality. High show-quality traits.",
-    features: [
-      "Pure breed health documentation",
-      "Microchipped",
-      "Dubai showroom viewable"
-    ]
+    tilt: "0.55deg",
+    description: "Cute compact Pomeranian girl with thick fluffy double coat and cheerful demeanor.",
+    features: ["Complete vaccinations", "Microchip ISO certified", "Vet examined", "Starter kit"]
   },
   {
     id: "copper-male",
@@ -182,20 +137,14 @@ export const puppies = [
     age: "2 months",
     status: "available",
     origin: "imported",
-    tagline: "Rich ruby red coat with white chest star",
-    image: "https://puppy.instabizweb.com/media/Z0ToauDx7Eve/5fffe4d022/b942a5_4b8cfb8204d24eadaf524332aba1dc15-mv2.webp",
-    gallery: [
-      "https://puppy.instabizweb.com/media/Z0ToauDx7Eve/5fffe4d022/b942a5_4b8cfb8204d24eadaf524332aba1dc15-mv2.webp"
-    ],
+    tagline: "Warm golden Cavapoo boy with soulful eyes",
+    image: "https://puppy.instabizweb.com/media/O-6w4FYqE10j/be76f399cc/b942a5_bb73ebbb952047988f944f3a8e3052bd-mv2.jpg",
+    gallery: ["https://puppy.instabizweb.com/media/O-6w4FYqE10j/be76f399cc/b942a5_bb73ebbb952047988f944f3a8e3052bd-mv2.jpg"],
     hasVideo: false,
-    wash: "#bfddf5",
-    tilt: "-0.6deg",
-    description: "Copper is an enchanting Cavapoo boy with silky waves and an affectionate soul. Loves nap time and playtime equally.",
-    features: [
-      "Health guarantee included",
-      "Veterinary clearance certificate",
-      "Microchipped with ID tag"
-    ]
+    wash: "#fbe3b4",
+    tilt: "-0.48deg",
+    description: "Golden honey Cavapoo with an ultra-loving personality and gentle temperament.",
+    features: ["Vaccinated and dewormed", "Vet checked with passport", "Travel ready", "Support 24/7"]
   },
   {
     id: "shitzu-female",
@@ -205,21 +154,15 @@ export const puppies = [
     gender: "girl",
     age: "2 months",
     status: "available",
-    origin: "local",
-    tagline: "Gentle princess with sweet soulful eyes",
-    image: "https://puppy.instabizweb.com/media/gAaGwoGej2g6/5523e884dd/b942a5_50f0ae67c9ff437d911597d52a9e63b3-mv2.jpg",
-    gallery: [
-      "https://puppy.instabizweb.com/media/gAaGwoGej2g6/5523e884dd/b942a5_50f0ae67c9ff437d911597d52a9e63b3-mv2.jpg"
-    ],
-    hasVideo: true,
-    wash: "#f9b9a6",
-    tilt: "1.4deg",
-    description: "Gentle, balanced temperament. Great companion for families living in Dubai apartments.",
-    features: [
-      "Vaccinated and microchipped",
-      "Socialized with puppy handlers",
-      "Immediate UAE delivery available"
-    ]
+    origin: "imported",
+    tagline: "Sweet tricolor Shih Tzu baby girl",
+    image: "https://puppy.instabizweb.com/media/qNrTCSrsYyzY/168fa8c4ff/b942a5_eb14616c76c24da89afe7fa3b7d7ae6a-mv2.jpeg",
+    gallery: ["https://puppy.instabizweb.com/media/qNrTCSrsYyzY/168fa8c4ff/b942a5_eb14616c76c24da89afe7fa3b7d7ae6a-mv2.jpeg"],
+    hasVideo: false,
+    wash: "#f9cdbf",
+    tilt: "0.38deg",
+    description: "Cute compact Shih Tzu female with symmetrical markings and playful curiosity.",
+    features: ["Vaccinated", "Veterinary certificate", "Microchip", "Worldwide delivery available"]
   },
   {
     id: "shitzu-male",
@@ -229,22 +172,108 @@ export const puppies = [
     gender: "boy",
     age: "2 months",
     status: "available",
-    origin: "local",
-    tagline: "Happy little teddy bear companion",
-    image: "https://puppy.instabizweb.com/media/xeMJCapr5vcU/e618c653b2/b942a5_14376a216177484dbbb27995d0f6aeb7-mv2.jpg",
-    gallery: [
-      "https://puppy.instabizweb.com/media/xeMJCapr5vcU/e618c653b2/b942a5_14376a216177484dbbb27995d0f6aeb7-mv2.jpg"
-    ],
+    origin: "imported",
+    tagline: "Playful black & white Shih Tzu puppy boy",
+    image: "https://puppy.instabizweb.com/media/crgs9ih6as_M/e37bafb1bf/b942a5_344e49c6c34940d2b09a3ddd5c2e3234-mv2.jpg",
+    gallery: ["https://puppy.instabizweb.com/media/crgs9ih6as_M/e37bafb1bf/b942a5_344e49c6c34940d2b09a3ddd5c2e3234-mv2.jpg"],
     hasVideo: false,
-    wash: "#bfddf5",
-    tilt: "-1.3deg",
-    description: "Sweet, trusting puppy boy with a warm personality and soft, hypoallergenic coat.",
-    features: [
-      "Veterinary health passport",
-      "Microchip registered",
-      "Post-adoption guidance support"
-    ]
+    wash: "#f2be6b",
+    tilt: "-0.52deg",
+    description: "Healthy and energetic Shih Tzu boy with plush coat and friendly nature.",
+    features: ["Full vaccine course", "Microchipped", "Health guarantee", "Concierge delivery"]
   },
+  {
+    id: "maltipoo-female-1",
+    name: "Maltipoo",
+    breed: "Maltipoo",
+    breedCategory: "maltipoo",
+    gender: "girl",
+    age: "2.5 months",
+    status: "available",
+    origin: "imported",
+    tagline: "Apricot Maltipoo girl with silky wavy coat",
+    image: "https://puppy.instabizweb.com/media/wNm2_VIBEQvK/4b68f59e75/b942a5_7dd33c9b78c04f78a6a1c7386fb55620-mv2.jpg",
+    gallery: ["https://puppy.instabizweb.com/media/wNm2_VIBEQvK/4b68f59e75/b942a5_7dd33c9b78c04f78a6a1c7386fb55620-mv2.jpg"],
+    hasVideo: false,
+    wash: "#fbe3b4",
+    tilt: "0.45deg",
+    description: "Compact apricot female Maltipoo with big dark eyes and affectionate spirit.",
+    features: ["Health card certified", "Microchipped", "Hypoallergenic", "Dubai showroom meet"]
+  },
+  {
+    id: "maltipoo-female",
+    name: "Maltipoo",
+    breed: "Maltipoo",
+    breedCategory: "maltipoo",
+    gender: "girl",
+    age: "2 months",
+    status: "available",
+    origin: "imported",
+    tagline: "Tiny button-nosed Maltipoo puppy girl",
+    image: "https://puppy.instabizweb.com/media/lMhASnmIIVQ4/ad2353ad31/b942a5_6a5617708d75408b8f73725080ed0149-mv2.jpg",
+    gallery: ["https://puppy.instabizweb.com/media/lMhASnmIIVQ4/ad2353ad31/b942a5_6a5617708d75408b8f73725080ed0149-mv2.jpg"],
+    hasVideo: false,
+    wash: "#f9cdbf",
+    tilt: "-0.38deg",
+    description: "Exceptionally small female Maltipoo, wonderful with children and eager to snuggle.",
+    features: ["Vaccinations up-to-date", "Dewormed", "Microchipped", "Safe delivery"]
+  },
+  {
+    id: "korean-teacup-pomeranian-1",
+    name: "Korean Teacup Pomeranian",
+    breed: "Korean Teacup Pomeranian",
+    breedCategory: "pomeranian",
+    gender: "girl",
+    age: "2 months",
+    status: "available",
+    origin: "korean",
+    tagline: "Pure white teacup Pomeranian with bear face",
+    image: "https://puppy.instabizweb.com/media/EsAq2LSRvVCJ/4d553ed044/b942a5_a8d264c1aa754d80bc7c98917dfd1fda-mv2.jpg",
+    gallery: ["https://puppy.instabizweb.com/media/EsAq2LSRvVCJ/4d553ed044/b942a5_a8d264c1aa754d80bc7c98917dfd1fda-mv2.jpg"],
+    hasVideo: false,
+    wash: "#f2be6b",
+    tilt: "0.58deg",
+    description: "Elite Korean line teacup Pomeranian girl with short muzzle and abundant coat.",
+    features: ["Authentic Korean breeding", "ISO microchip", "Full health certification", "VIP transport"]
+  },
+  {
+    id: "korean-teacup-pomeranian",
+    name: "Korean Teacup Pomeranian",
+    breed: "Korean Teacup Pomeranian",
+    breedCategory: "pomeranian",
+    gender: "girl",
+    age: "2 months",
+    status: "available",
+    origin: "korean",
+    tagline: "Miniature cream Pomeranian girl with sweet smile",
+    image: "https://puppy.instabizweb.com/media/vzf7P8SPCZ-Q/a8db4ee114/b942a5_967bb346583b4146acb56607f5da5f21-mv2.jpg",
+    gallery: ["https://puppy.instabizweb.com/media/vzf7P8SPCZ-Q/a8db4ee114/b942a5_967bb346583b4146acb56607f5da5f21-mv2.jpg"],
+    hasVideo: false,
+    wash: "#fbe3b4",
+    tilt: "-0.42deg",
+    description: "Gentle miniature cream Pomeranian girl, playful and raised in clean nursery surroundings.",
+    features: ["Korean certified pedigree", "Veterinary health checked", "Vaccinated", "Starter pack"]
+  },
+  {
+    id: "korean-teacup-pomeranian-male",
+    name: "Korean Teacup Pomeranian",
+    breed: "Korean Teacup Pomeranian",
+    breedCategory: "pomeranian",
+    gender: "boy",
+    age: "2 months",
+    status: "available",
+    origin: "korean",
+    tagline: "Micro boy Pomeranian with plush teddy coat",
+    image: "https://puppy.instabizweb.com/media/nZTGFv46hrZI/fb9eeefc9c/b942a5_dcb8eb174915463ea0c40c58b7b0e406-mv2.jpg",
+    gallery: ["https://puppy.instabizweb.com/media/nZTGFv46hrZI/fb9eeefc9c/b942a5_dcb8eb174915463ea0c40c58b7b0e406-mv2.jpg"],
+    hasVideo: false,
+    wash: "#f9cdbf",
+    tilt: "0.35deg",
+    description: "Tiny boy Pomeranian from Korea. Super fluffy, friendly, and eager to bond.",
+    features: ["Korean import documents", "Microchipped", "Vet inspected", "Worldwide shipping"]
+  },
+
+  // 5 ALREADY GONE HOME PUPPIES
   {
     id: "pomeranian-ace-boy",
     name: "Ace",
@@ -253,15 +282,15 @@ export const puppies = [
     gender: "boy",
     age: "3 months",
     status: "gone-home",
-    origin: "imported",
-    tagline: "Happy in his forever home in Jumeirah",
-    image: "https://puppy.instabizweb.com/media/3yOfnmoyPooH/81e0c7e00c/b942a5_556841b9a73942e5a9d782a683f3bc68-mv2.jpg",
-    gallery: [],
+    origin: "korean",
+    tagline: "Adopted by a loving family in Dubai",
+    image: "https://puppy.instabizweb.com/media/mihUKGFCatU3/0461cca56e/27b888_bac41adfadc44dce846a1c3fd0cdb0de-mv2.avif",
+    gallery: ["https://puppy.instabizweb.com/media/mihUKGFCatU3/0461cca56e/27b888_bac41adfadc44dce846a1c3fd0cdb0de-mv2.avif"],
     hasVideo: false,
-    wash: "#bfddf5",
-    tilt: "0.8deg",
-    description: "Ace found his loving family in Dubai. He is thriving and bringing boundless joy to his household.",
-    features: ["Adopted"]
+    wash: "#f9cdbf",
+    tilt: "-0.63deg",
+    description: "Ace found his forever home in Dubai. A super joyful white teacup Pomeranian.",
+    features: ["Happily adopted", "Microchipped", "Fully vaccinated"]
   },
   {
     id: "poodle-leo-male",
@@ -271,15 +300,15 @@ export const puppies = [
     gender: "boy",
     age: "2.5 months",
     status: "gone-home",
-    origin: "local",
-    tagline: "Living happily in Downtown Dubai",
-    image: "https://puppy.instabizweb.com/media/vMu0BPvkAZ-j/c65e53967d/b942a5_0b2c0c0d178c4005acbe28725a5ea573-mv2.jpg",
-    gallery: [],
+    origin: "imported",
+    tagline: "Happily settled in his new home",
+    image: "https://puppy.instabizweb.com/media/QgFG5s09n-ss/81af626d2d/27b888_5f9a7189bb21477d832047aae2040921-mv2.avif",
+    gallery: ["https://puppy.instabizweb.com/media/QgFG5s09n-ss/81af626d2d/27b888_5f9a7189bb21477d832047aae2040921-mv2.avif"],
     hasVideo: false,
-    wash: "#f2be6b",
-    tilt: "-0.5deg",
-    description: "Leo is now settled in his new home, enjoying evening strolls and lots of cuddles.",
-    features: ["Adopted"]
+    wash: "#fbe3b4",
+    tilt: "0.55deg",
+    description: "Leo is now bringing endless laughter and love to his wonderful family.",
+    features: ["Happily adopted", "Health certified", "Microchipped"]
   },
   {
     id: "maltipoo-mia-girl",
@@ -289,15 +318,15 @@ export const puppies = [
     gender: "girl",
     age: "2 months",
     status: "gone-home",
-    origin: "imported",
-    tagline: "Cherished companion in Abu Dhabi",
-    image: "https://puppy.instabizweb.com/media/3WJNmn6VVgVu/732f779474/b942a5_2b5dcece361b4589890ae920c66a1b70-mv2.jpg",
-    gallery: [],
+    origin: "korean",
+    tagline: "Living her best life with her new family",
+    image: "https://puppy.instabizweb.com/media/4vu6_PGfL64H/537c367d85/27b888_747a4667fec640c69aad9bc045d61ac6-mv2.avif",
+    gallery: ["https://puppy.instabizweb.com/media/4vu6_PGfL64H/537c367d85/27b888_747a4667fec640c69aad9bc045d61ac6-mv2.avif"],
     hasVideo: false,
-    wash: "#f9b9a6",
-    tilt: "1.1deg",
-    description: "Sweet Mia joined a wonderful family with two children who adore her.",
-    features: ["Adopted"]
+    wash: "#f2be6b",
+    tilt: "-0.45deg",
+    description: "Mia was adopted by an amazing family in Abu Dhabi.",
+    features: ["Happily adopted", "Veterinary cleared", "Passport ready"]
   },
   {
     id: "maltipoo-sadie-girl",
@@ -308,19 +337,36 @@ export const puppies = [
     age: "3 months",
     status: "gone-home",
     origin: "imported",
-    tagline: "Happily rehomed in Dubai Marina",
-    image: "https://puppy.instabizweb.com/media/Z0ToauDx7Eve/5fffe4d022/b942a5_4b8cfb8204d24eadaf524332aba1dc15-mv2.webp",
-    gallery: [],
+    tagline: "Adored by her new human siblings",
+    image: "https://puppy.instabizweb.com/media/159oT4F46uhk/b66c2be87f/27b888_ea6e7e0fcd43447d854657b6de98d4cb-mv2.avif",
+    gallery: ["https://puppy.instabizweb.com/media/159oT4F46uhk/b66c2be87f/27b888_ea6e7e0fcd43447d854657b6de98d4cb-mv2.avif"],
     hasVideo: false,
-    wash: "#bfddf5",
-    tilt: "-0.9deg",
-    description: "Sadie has captured everyone's hearts with her friendly demeanor.",
-    features: ["Adopted"]
+    wash: "#fbe3b4",
+    tilt: "0.62deg",
+    description: "Sadie settled happily into her warm home and loves cuddle time.",
+    features: ["Happily adopted", "Fully health checked", "Microchipped"]
+  },
+  {
+    id: "blue-marle-pomeranian",
+    name: "Pomeranian",
+    breed: "Blue Merle Pomeranian",
+    breedCategory: "pomeranian",
+    gender: "boy",
+    age: "2 months",
+    status: "gone-home",
+    origin: "imported",
+    tagline: "Rare blue merle Pomeranian boy with his forever family",
+    image: "https://puppy.instabizweb.com/media/bMSEHnYcBTFF/970fdc1ee6/27b888_5e612a215bf343328c08d99e0e9c5a37-mv2.avif",
+    gallery: ["https://puppy.instabizweb.com/media/bMSEHnYcBTFF/970fdc1ee6/27b888_5e612a215bf343328c08d99e0e9c5a37-mv2.avif"],
+    hasVideo: false,
+    wash: "#f9cdbf",
+    tilt: "-0.5deg",
+    description: "Rare blue merle Pomeranian boy adopted by a devoted family.",
+    features: ["Happily adopted", "Verified rare color lineage", "Microchipped"]
   }
 ];
 
 export const breedFilters = [
-  { label: "All breeds", value: "all" },
   { label: "Maltipoo", value: "maltipoo" },
   { label: "Pomeranian", value: "pomeranian" },
   { label: "Poodle", value: "poodle" },
@@ -329,7 +375,7 @@ export const breedFilters = [
 ];
 
 export const originFilters = [
-  { label: "All locations", value: "all" },
-  { label: "In Dubai (Local)", value: "local" },
-  { label: "Imported upon request", value: "imported" }
+  { label: "Everywhere", value: "everywhere" },
+  { label: "Imported", value: "imported" },
+  { label: "Korean Teacup", value: "korean" }
 ];
