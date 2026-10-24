@@ -9,8 +9,18 @@ export const PawIcon = ({ className = "tp-paw-icon" }) => (
 );
 
 export default function Header() {
+  const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
+  const isHome = location.pathname === '/';
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   useEffect(() => {
     setMenuOpen(false);
@@ -18,53 +28,59 @@ export default function Header() {
   }, [location.pathname]);
 
   return (
-    <header className="tp-header" id="site-header" data-scrolled="false" data-home={location.pathname === '/' ? 'true' : 'false'}>
+    <header
+      id="site-header"
+      data-scrolled={scrolled ? "true" : "false"}
+      data-hidden="false"
+      data-home={isHome ? "true" : undefined}
+      className="tp-header fixed inset-x-0 top-0 z-50"
+    >
       <div className="tp-header__bar gutter">
-        <Link to="/" className="tp-header__brand" aria-label="TeddyPups U.A.E. — Home">
+        <Link className="tp-header__brand" aria-label="TeddyPups U.A.E. — home" to="/">
           <img
-            src="https://puppy.instabizweb.com/brand/logo.png"
-            alt="TeddyPups Logo"
-            className="tp-header__logo"
+            alt=""
             width="56"
             height="56"
+            className="tp-header__logo"
+            src="https://puppy.instabizweb.com/brand/logo.png"
           />
           <span className="font-plush tp-header__name">TeddyPups</span>
         </Link>
 
-        <nav aria-label="Main navigation" className="tp-header__nav">
+        <nav aria-label="Main" className="tp-header__nav">
           <ul>
             <li>
-              <NavLink to="/" end className={({ isActive }) => `tp-nav-link ${isActive ? 'active' : ''}`}>
+              <NavLink to="/" end className="tp-nav-link" data-active={isHome ? "true" : "false"}>
                 <span>Home</span>
                 <PawIcon className="tp-nav-link__paw" />
               </NavLink>
             </li>
             <li>
-              <NavLink to="/puppies" className={({ isActive }) => `tp-nav-link ${isActive ? 'active' : ''}`}>
+              <NavLink to="/puppies" className="tp-nav-link" data-active={location.pathname === '/puppies' ? "true" : "false"}>
                 <span>Puppies</span>
                 <PawIcon className="tp-nav-link__paw" />
               </NavLink>
             </li>
             <li>
-              <NavLink to="/happy-families" className={({ isActive }) => `tp-nav-link ${isActive ? 'active' : ''}`}>
+              <NavLink to="/happy-families" className="tp-nav-link" data-active={location.pathname === '/happy-families' ? "true" : "false"}>
                 <span>Happy families</span>
                 <PawIcon className="tp-nav-link__paw" />
               </NavLink>
             </li>
             <li>
-              <NavLink to="/how-it-works" className={({ isActive }) => `tp-nav-link ${isActive ? 'active' : ''}`}>
+              <NavLink to="/how-it-works" className="tp-nav-link" data-active={location.pathname === '/how-it-works' ? "true" : "false"}>
                 <span>How it works</span>
                 <PawIcon className="tp-nav-link__paw" />
               </NavLink>
             </li>
             <li>
-              <NavLink to="/faq" className={({ isActive }) => `tp-nav-link ${isActive ? 'active' : ''}`}>
+              <NavLink to="/faq" className="tp-nav-link" data-active={location.pathname === '/faq' ? "true" : "false"}>
                 <span>FAQ</span>
                 <PawIcon className="tp-nav-link__paw" />
               </NavLink>
             </li>
             <li>
-              <NavLink to="/contact" className={({ isActive }) => `tp-nav-link ${isActive ? 'active' : ''}`}>
+              <NavLink to="/contact" className="tp-nav-link" data-active={location.pathname === '/contact' ? "true" : "false"}>
                 <span>Visit & contact</span>
                 <PawIcon className="tp-nav-link__paw" />
               </NavLink>
@@ -72,7 +88,7 @@ export default function Header() {
           </ul>
         </nav>
 
-        <div className="tp-header__end" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+        <div className="tp-header__end">
           <a
             href={siteConfig.whatsappUrl}
             target="_blank"
@@ -83,93 +99,80 @@ export default function Header() {
           </a>
           <button
             type="button"
-            className="tp-header__mobile-toggle"
+            className="inline-flex h-10 items-center gap-2 rounded-full border-2 border-cocoa bg-milk px-4 text-[0.95rem] font-semibold lg:hidden"
             onClick={() => setMenuOpen(true)}
-            aria-label="Open navigation menu"
+            aria-haspopup="dialog"
           >
-            <PawIcon style={{ width: '16px', height: '16px' }} />
-            <span>Menu</span>
+            <PawIcon className="size-4" />
+            Menu
           </button>
         </div>
       </div>
 
-      {/* Scalloped Hem Pattern from reference */}
+      {/* Decorative Scalloped Hem Pattern */}
       <svg aria-hidden="true" className="tp-header__hem" width="100%" height="14" preserveAspectRatio="none">
         <defs>
-          <pattern id="tp-hem-pattern" width="44" height="14" patternUnits="userSpaceOnUse">
-            <path d="M0 0H44V2A22 11 0 0 1 0 2Z" fill="#fffdf8" />
-            <path d="M0 2A22 11 0 0 0 44 2" fill="none" stroke="#2a170e" strokeWidth="2" />
+          <pattern id="tp-hem" width="44" height="14" patternUnits="userSpaceOnUse">
+            <path d="M0 0H44V2A22 11 0 0 1 0 2Z" className="tp-header__hem-fill" />
+            <path d="M0 2A22 11 0 0 0 44 2" className="tp-header__hem-line" />
           </pattern>
         </defs>
-        <rect width="100%" height="14" fill="url(#tp-hem-pattern)" />
+        <rect width="100%" height="14" fill="url(#tp-hem)" />
       </svg>
 
-      {/* Mobile Menu Dialog */}
-      <div className={`tp-drawer ${menuOpen ? 'open' : ''}`}>
-        <div className="tp-drawer__header">
-          <span className="font-scrawl" style={{ fontSize: '1.4rem' }}>where to, friend?</span>
-          <button
-            type="button"
-            className="btn btn-dark"
-            onClick={() => setMenuOpen(false)}
-            style={{ padding: '0.45rem 1rem' }}
-          >
-            Close
-          </button>
-        </div>
-        <ul className="tp-drawer__links">
-          <li>
-            <NavLink to="/" onClick={() => setMenuOpen(false)}>
-              <span>Home</span>
-              <PawIcon style={{ width: '28px', height: '28px' }} />
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/puppies" onClick={() => setMenuOpen(false)}>
-              <span>Puppies</span>
-              <PawIcon style={{ width: '28px', height: '28px' }} />
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/happy-families" onClick={() => setMenuOpen(false)}>
-              <span>Happy families</span>
-              <PawIcon style={{ width: '28px', height: '28px' }} />
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/how-it-works" onClick={() => setMenuOpen(false)}>
-              <span>How it works</span>
-              <PawIcon style={{ width: '28px', height: '28px' }} />
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/faq" onClick={() => setMenuOpen(false)}>
-              <span>FAQ</span>
-              <PawIcon style={{ width: '28px', height: '28px' }} />
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/contact" onClick={() => setMenuOpen(false)}>
-              <span>Visit & contact</span>
-              <PawIcon style={{ width: '28px', height: '28px' }} />
-            </NavLink>
-          </li>
-        </ul>
-        <div style={{ marginTop: 'auto', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-          <a
-            href={siteConfig.whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-whatsapp"
-            style={{ width: '100%', justifyContent: 'center' }}
-          >
-            WhatsApp us
-          </a>
-          <p style={{ textAlign: 'center', fontSize: '0.9rem', fontWeight: 600 }}>
-            {siteConfig.phone}
-          </p>
-        </div>
-      </div>
+      {/* Mobile Drawer */}
+      {menuOpen && (
+        <dialog
+          aria-label="Site menu"
+          open
+          className="tp-menu m-0 h-dvh max-h-none w-screen max-w-none bg-honey p-0 text-cocoa backdrop:bg-cocoa/40 fixed inset-0 z-[100]"
+        >
+          <div className="flex h-full flex-col gutter pb-[calc(1.5rem+env(safe-area-inset-bottom))] pt-5">
+            <div className="flex items-center justify-between">
+              <span className="font-scrawl text-lg">where to, friend?</span>
+              <button
+                type="button"
+                className="h-11 rounded-full bg-cocoa px-5 font-semibold text-milk"
+                onClick={() => setMenuOpen(false)}
+              >
+                Close
+              </button>
+            </div>
+            <nav aria-label="Mobile" className="mt-10 flex-1">
+              <ul className="space-y-1">
+                {['/', '/puppies', '/happy-families', '/how-it-works', '/faq', '/contact'].map((path) => {
+                  const label = path === '/' ? 'Home' : path.slice(1).replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase());
+                  const active = location.pathname === path;
+                  return (
+                    <li key={path}>
+                      <NavLink
+                        to={path}
+                        className="tp-menu-link font-plush block py-2 text-[clamp(2.4rem,11vw,3.4rem)]"
+                        data-active={active ? "true" : "false"}
+                        onClick={() => setMenuOpen(false)}
+                      >
+                        <span>{label}</span>
+                        <PawIcon className="tp-nav-link__paw" />
+                      </NavLink>
+                    </li>
+                  );
+                })}
+              </ul>
+            </nav>
+            <div className="space-y-3">
+              <a
+                href={siteConfig.whatsappUrl}
+                className="btn btn-whatsapp w-full"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                WhatsApp us
+              </a>
+              <p className="text-center text-sm font-medium">{siteConfig.phone}</p>
+            </div>
+          </div>
+        </dialog>
+      )}
     </header>
   );
 }
