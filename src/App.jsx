@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
+import CurtainIntro from './components/CurtainIntro';
 import Home from './pages/Home';
 import Puppies from './pages/Puppies';
 import PuppyDetail from './pages/PuppyDetail';
@@ -14,6 +15,7 @@ import Contact from './pages/Contact';
 export default function App() {
   return (
     <>
+      <CurtainIntro />
       <Header />
       <main style={{ flex: '1 0 auto' }}>
         <Routes>
@@ -24,7 +26,6 @@ export default function App() {
           <Route path="/how-it-works" element={<HowItWorks />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/contact" element={<Contact />} />
-          {/* Fallback to Home */}
           <Route path="*" element={<Home />} />
         </Routes>
       </main>

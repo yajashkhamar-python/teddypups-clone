@@ -18,13 +18,15 @@ export default function Header() {
   }, [location.pathname]);
 
   return (
-    <header className="tp-header" id="site-header">
+    <header className="tp-header" id="site-header" data-scrolled="false" data-home={location.pathname === '/' ? 'true' : 'false'}>
       <div className="tp-header__bar gutter">
         <Link to="/" className="tp-header__brand" aria-label="TeddyPups U.A.E. — Home">
           <img
             src="https://puppy.instabizweb.com/brand/logo.png"
             alt="TeddyPups Logo"
             className="tp-header__logo"
+            width="56"
+            height="56"
           />
           <span className="font-plush tp-header__name">TeddyPups</span>
         </Link>
@@ -34,37 +36,37 @@ export default function Header() {
             <li>
               <NavLink to="/" end className={({ isActive }) => `tp-nav-link ${isActive ? 'active' : ''}`}>
                 <span>Home</span>
-                <PawIcon />
+                <PawIcon className="tp-nav-link__paw" />
               </NavLink>
             </li>
             <li>
               <NavLink to="/puppies" className={({ isActive }) => `tp-nav-link ${isActive ? 'active' : ''}`}>
                 <span>Puppies</span>
-                <PawIcon />
+                <PawIcon className="tp-nav-link__paw" />
               </NavLink>
             </li>
             <li>
               <NavLink to="/happy-families" className={({ isActive }) => `tp-nav-link ${isActive ? 'active' : ''}`}>
                 <span>Happy families</span>
-                <PawIcon />
+                <PawIcon className="tp-nav-link__paw" />
               </NavLink>
             </li>
             <li>
               <NavLink to="/how-it-works" className={({ isActive }) => `tp-nav-link ${isActive ? 'active' : ''}`}>
                 <span>How it works</span>
-                <PawIcon />
+                <PawIcon className="tp-nav-link__paw" />
               </NavLink>
             </li>
             <li>
               <NavLink to="/faq" className={({ isActive }) => `tp-nav-link ${isActive ? 'active' : ''}`}>
                 <span>FAQ</span>
-                <PawIcon />
+                <PawIcon className="tp-nav-link__paw" />
               </NavLink>
             </li>
             <li>
               <NavLink to="/contact" className={({ isActive }) => `tp-nav-link ${isActive ? 'active' : ''}`}>
                 <span>Visit & contact</span>
-                <PawIcon />
+                <PawIcon className="tp-nav-link__paw" />
               </NavLink>
             </li>
           </ul>
@@ -85,13 +87,24 @@ export default function Header() {
             onClick={() => setMenuOpen(true)}
             aria-label="Open navigation menu"
           >
-            <PawIcon />
+            <PawIcon style={{ width: '16px', height: '16px' }} />
             <span>Menu</span>
           </button>
         </div>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Scalloped Hem Pattern from reference */}
+      <svg aria-hidden="true" className="tp-header__hem" width="100%" height="14" preserveAspectRatio="none">
+        <defs>
+          <pattern id="tp-hem-pattern" width="44" height="14" patternUnits="userSpaceOnUse">
+            <path d="M0 0H44V2A22 11 0 0 1 0 2Z" fill="#fffdf8" />
+            <path d="M0 2A22 11 0 0 0 44 2" fill="none" stroke="#2a170e" strokeWidth="2" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="14" fill="url(#tp-hem-pattern)" />
+      </svg>
+
+      {/* Mobile Menu Dialog */}
       <div className={`tp-drawer ${menuOpen ? 'open' : ''}`}>
         <div className="tp-drawer__header">
           <span className="font-scrawl" style={{ fontSize: '1.4rem' }}>where to, friend?</span>
@@ -108,37 +121,37 @@ export default function Header() {
           <li>
             <NavLink to="/" onClick={() => setMenuOpen(false)}>
               <span>Home</span>
-              <PawIcon style={{ width: '24px', height: '24px' }} />
+              <PawIcon style={{ width: '28px', height: '28px' }} />
             </NavLink>
           </li>
           <li>
             <NavLink to="/puppies" onClick={() => setMenuOpen(false)}>
               <span>Puppies</span>
-              <PawIcon style={{ width: '24px', height: '24px' }} />
+              <PawIcon style={{ width: '28px', height: '28px' }} />
             </NavLink>
           </li>
           <li>
             <NavLink to="/happy-families" onClick={() => setMenuOpen(false)}>
               <span>Happy families</span>
-              <PawIcon style={{ width: '24px', height: '24px' }} />
+              <PawIcon style={{ width: '28px', height: '28px' }} />
             </NavLink>
           </li>
           <li>
             <NavLink to="/how-it-works" onClick={() => setMenuOpen(false)}>
               <span>How it works</span>
-              <PawIcon style={{ width: '24px', height: '24px' }} />
+              <PawIcon style={{ width: '28px', height: '28px' }} />
             </NavLink>
           </li>
           <li>
             <NavLink to="/faq" onClick={() => setMenuOpen(false)}>
               <span>FAQ</span>
-              <PawIcon style={{ width: '24px', height: '24px' }} />
+              <PawIcon style={{ width: '28px', height: '28px' }} />
             </NavLink>
           </li>
           <li>
             <NavLink to="/contact" onClick={() => setMenuOpen(false)}>
               <span>Visit & contact</span>
-              <PawIcon style={{ width: '24px', height: '24px' }} />
+              <PawIcon style={{ width: '28px', height: '28px' }} />
             </NavLink>
           </li>
         </ul>
@@ -148,7 +161,7 @@ export default function Header() {
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-whatsapp"
-            style={{ width: '100%' }}
+            style={{ width: '100%', justifyContent: 'center' }}
           >
             WhatsApp us
           </a>
