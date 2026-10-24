@@ -1,12 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { puppies } from '../data/puppies';
 import { happyMoments, faqList, siteConfig } from '../data/siteData';
 import PuppyCard from '../components/PuppyCard';
 import { PawIcon } from '../components/Header';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export default function Home() {
   const [activeFaq, setActiveFaq] = useState(null);
+  const [heroHere, setHeroHere] = useState(true);
+
+  useScrollReveal();
+
+  useEffect(() => {
+    // If curtain intro is playing, set here to false until lifted
+    const seen = sessionStorage.getItem('tp_intro_seen');
+    if (!seen) {
+      setHeroHere(false);
+      const onDone = () => setHeroHere(true);
+      window.addEventListener('tp-curtain-done', onDone);
+      return () => window.removeEventListener('tp-curtain-done', onDone);
+    } else {
+      setHeroHere(true);
+    }
+  }, []);
 
   const availablePups = puppies.filter(p => p.status === 'available');
 
@@ -71,6 +88,7 @@ export default function Home() {
       <section
         data-pup-scene="true"
         data-tone="light"
+        data-here={heroHere ? "true" : "false"}
         className="tp-scene tp-hero"
         style={{
           '--sky-top': '#fffdf8',
@@ -248,8 +266,8 @@ export default function Home() {
               gap: '2.2rem'
             }}
           >
-            {availablePups.slice(0, 8).map(puppy => (
-              <PuppyCard key={puppy.id} puppy={puppy} />
+            {availablePups.slice(0, 8).map((puppy, idx) => (
+              <PuppyCard key={puppy.id} puppy={puppy} index={idx} />
             ))}
           </div>
         </div>
@@ -561,42 +579,43 @@ export default function Home() {
             </h2>
           </div>
 
-          <div>
-            {faqList.slice(0, 5).map((faq, idx) => (
-              <div key={idx} className="tp-board" style={{ marginBottom: '1rem', padding: '1.25rem 1.6rem' }}>
-                <button
-                  type="button"
+          <ul className="tp-notes__list" style={{ gap: '1.4rem' }}>
+            {faqList.slice(0, 5).map((faq, idx) => {
+              const isOpen = activeFaq === idx;
+              const tilt = idx % 2 === 0 ? '-1.2deg' : '1.4deg';
+              const pinColor = idx % 2 === 0 ? 'var(--color-toffee)' : 'var(--color-sky-deep)';
+              return (
+                <li
+                  key={idx}
+                  className="tp-note"
+                  data-reveal="true"
+                  data-unfolded={isOpen ? "true" : undefined}
                   style={{
-                    width: '100%',
-                    background: 'none',
-                    border: 'none',
-                    textAlign: 'left',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    fontSize: '1.15rem',
-                    fontWeight: 700,
-                    color: 'var(--color-cocoa)',
-                    cursor: 'pointer',
-                    gap: '1rem',
-                    fontFamily: 'inherit'
+                    '--tilt': tilt,
+                    '--pin': pinColor,
+                    '--i': idx
                   }}
-                  onClick={() => toggleFaq(idx)}
-                  aria-expanded={activeFaq === idx}
                 >
-                  <span>{faq.q}</span>
-                  <span style={{ fontSize: '1.5rem', fontWeight: 700 }}>
-                    {activeFaq === idx ? '−' : '+'}
-                  </span>
-                </button>
-                {activeFaq === idx && (
-                  <div style={{ marginTop: '1rem', paddingTop: '1rem', borderTop: '1.5px dashed rgba(42, 23, 14, 0.2)', color: 'var(--color-cocoa-soft)', lineHeight: 1.6 }}>
-                    {faq.a}
+                  <span aria-hidden="true" className="tp-note__pin"></span>
+                  <h3 className="tp-note__q" style={{ margin: 0 }}>
+                    <button
+                      type="button"
+                      onClick={() => toggleFaq(idx)}
+                      aria-expanded={isOpen}
+                    >
+                      <span className="font-plush-text">{faq.q}</span>
+                      <span aria-hidden="true" className="tp-note__chevron"></span>
+                    </button>
+                  </h3>
+                  <div className="tp-note__answer">
+                    <div className="tp-note__flap">
+                      <p>{faq.a}</p>
+                    </div>
                   </div>
-                )}
-              </div>
-            ))}
-          </div>
+                </li>
+              );
+            })}
+          </ul>
 
           <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
             <Link to="/faq" className="btn btn-ghost">

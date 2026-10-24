@@ -1,38 +1,30 @@
 import React, { useState, useEffect } from 'react';
 
 export default function CurtainIntro() {
-  const [stage, setStage] = useState('intro'); // 'intro', 'lift', 'hidden'
+  const [stage, setStage] = useState('intro'); // 'intro', 'idle'
 
   useEffect(() => {
     // Check if user already saw intro in current session
     const seen = sessionStorage.getItem('tp_intro_seen');
     if (seen) {
-      setStage('hidden');
+      setStage('idle');
+      window.dispatchEvent(new CustomEvent('tp-curtain-done'));
       return;
     }
 
-    // Play intro for 1.8s, then trigger curtain lift
-    const liftTimer = setTimeout(() => {
-      setStage('lift');
-    }, 1800);
-
-    // Completely remove from DOM after lift finishes
-    const hideTimer = setTimeout(() => {
-      setStage('hidden');
+    // Reference intro lifts blanket at 0.56s and finishes by 1.04s
+    const timer = setTimeout(() => {
+      setStage('idle');
       sessionStorage.setItem('tp_intro_seen', 'true');
-    }, 2600);
+      window.dispatchEvent(new CustomEvent('tp-curtain-done'));
+    }, 1040);
 
-    return () => {
-      clearTimeout(liftTimer);
-      clearTimeout(hideTimer);
-    };
+    return () => clearTimeout(timer);
   }, []);
-
-  if (stage === 'hidden') return null;
 
   return (
     <div
-      className={`tp-curtain ${stage === 'lift' ? 'tp-curtain--lift' : ''}`}
+      className="tp-curtain"
       data-state={stage}
       aria-hidden="true"
     >

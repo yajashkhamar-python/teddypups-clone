@@ -3,12 +3,15 @@ import { useSearchParams, Link } from 'react-router-dom';
 import { puppies, breedFilters, originFilters } from '../data/puppies';
 import PuppyCard from '../components/PuppyCard';
 import { PawIcon } from '../components/Header';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export default function Puppies() {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const selectedBreed = searchParams.get('breed') || 'all';
   const selectedOrigin = searchParams.get('origin') || 'all';
+
+  useScrollReveal([selectedBreed, selectedOrigin]);
 
   const setFilter = (key, val) => {
     const next = new URLSearchParams(searchParams);
@@ -52,15 +55,19 @@ export default function Puppies() {
           {/* Filters Bar */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {/* Breed Filter Tabs */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
-              <span style={{ fontWeight: 700, fontSize: '0.9rem', marginRight: '0.5rem' }}>Breed:</span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', flexWrap: 'wrap' }}>
+              <span style={{ fontWeight: 700, fontSize: '0.9rem', marginRight: '0.3rem' }}>Breed:</span>
               {breedFilters.map(bf => (
                 <button
                   key={bf.value}
                   type="button"
                   onClick={() => setFilter('breed', bf.value)}
-                  className={`btn ${selectedBreed === bf.value ? 'btn-primary' : 'btn-secondary'}`}
-                  style={{ padding: '0.45rem 1rem', fontSize: '0.88rem' }}
+                  className="tp-sticker-chip"
+                  style={{
+                    backgroundColor: selectedBreed === bf.value ? 'var(--color-honey)' : 'var(--color-milk)',
+                    borderColor: 'var(--color-cocoa)',
+                    cursor: 'pointer'
+                  }}
                 >
                   {bf.label}
                 </button>
@@ -68,15 +75,19 @@ export default function Puppies() {
             </div>
 
             {/* Origin Filter Tabs */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
-              <span style={{ fontWeight: 700, fontSize: '0.9rem', marginRight: '0.5rem' }}>Origin:</span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', flexWrap: 'wrap' }}>
+              <span style={{ fontWeight: 700, fontSize: '0.9rem', marginRight: '0.3rem' }}>Origin:</span>
               {originFilters.map(of => (
                 <button
                   key={of.value}
                   type="button"
                   onClick={() => setFilter('origin', of.value)}
-                  className={`btn ${selectedOrigin === of.value ? 'btn-primary' : 'btn-secondary'}`}
-                  style={{ padding: '0.45rem 1rem', fontSize: '0.88rem' }}
+                  className="tp-sticker-chip"
+                  style={{
+                    backgroundColor: selectedOrigin === of.value ? 'var(--color-honey)' : 'var(--color-milk)',
+                    borderColor: 'var(--color-cocoa)',
+                    cursor: 'pointer'
+                  }}
                 >
                   {of.label}
                 </button>
@@ -134,12 +145,12 @@ export default function Puppies() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))',
-              gap: '2rem'
+              gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+              gap: '2.2rem'
             }}
           >
-            {availableList.map(puppy => (
-              <PuppyCard key={puppy.id} puppy={puppy} />
+            {availableList.map((puppy, idx) => (
+              <PuppyCard key={puppy.id} puppy={puppy} index={idx} />
             ))}
           </div>
         )}
@@ -159,13 +170,13 @@ export default function Puppies() {
             <div
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))',
-                gap: '2rem',
-                opacity: 0.9
+                gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+                gap: '2.2rem',
+                opacity: 0.95
               }}
             >
-              {goneHomeList.map(puppy => (
-                <PuppyCard key={puppy.id} puppy={puppy} />
+              {goneHomeList.map((puppy, idx) => (
+                <PuppyCard key={puppy.id} puppy={puppy} index={idx} />
               ))}
             </div>
           </div>
