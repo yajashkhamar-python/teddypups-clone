@@ -14,9 +14,9 @@
   --gold-dark: #e4a352;
   --accent-rust: #a24a1a;
   
-  --font-base: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  --font-scrawl: 'Caveat', cursive, sans-serif;
-  --font-plush: 'Plus Jakarta Sans', sans-serif;
+  --font-base: 'Figtree', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-scrawl: 'Shantell Sans', 'Caveat', cursive, sans-serif;
+  --font-plush: 'Fraunces', ui-serif, Georgia, serif;
 
   --header-h: 76px;
   --radius-sm: 8px;
