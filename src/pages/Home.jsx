@@ -5,12 +5,14 @@ import { happyMoments, faqList, siteConfig } from '../data/siteData';
 import PuppyCard from '../components/PuppyCard';
 import { PawIcon } from '../components/Header';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import { useMeetScroll } from '../hooks/useMeetScroll';
 
 export default function Home() {
   const [activeFaq, setActiveFaq] = useState(null);
   const [heroHere, setHeroHere] = useState(true);
 
   useScrollReveal();
+  useMeetScroll();
 
   useEffect(() => {
     // If curtain intro is playing, set here to false until lifted
