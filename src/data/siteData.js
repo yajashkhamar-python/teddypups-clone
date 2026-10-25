@@ -67,38 +67,38 @@ export const happyMoments = [
 export const faqList = [
   {
     q: "Are your puppies vaccinated and health-checked?",
-    a: "Yes, every single puppy undergoes a comprehensive veterinary medical examination before leaving for their new home. They come with up-to-date vaccinations, microchipping, official health passport, and a comprehensive health warranty against genetic illnesses."
+    a: "Yes. All our puppies come with a verified health certificate from licensed vets. Every puppy is vaccinated, dewormed, and thoroughly checked before joining your family."
   },
   {
     q: "Can I meet a puppy before I decide?",
-    a: "Absolutely! We welcome prospective families to our private Downtown Dubai showroom by appointment. You can sit with the puppy, see their temperament firsthand, and make sure it is the perfect mutual fit."
+    a: "Yes. Come meet our locally available puppies in our Downtown Dubai showroom and spend time bonding before making your decision."
   },
   {
     q: "Can I take my puppy home the same day?",
-    a: "Yes. Local puppies residing at our Dubai showroom can be taken home the very same day once paperwork and registration are completed. We also provide a starter travel kit with essential food and care instructions."
+    a: "Local puppies are available immediately, so you can take your puppy home the same day."
   },
   {
     q: "Do you import puppies from abroad?",
-    a: "Yes, we specialize in ethically sourcing rare and ultra-compact teacup breeds (including Korean lines) from elite, certified international breeders who uphold the strictest animal welfare standards."
+    a: "Yes. Through our Order Upon Request service we source rare and premium teacup breeds from the most reputable, certified breeders across Europe, Korea, and beyond — and we handle the import for you."
   },
   {
     q: "How does an imported puppy travel to Dubai?",
-    a: "Imported puppies travel safely in climate-controlled cabins accompanied by experienced pet couriers or certified pet transit handlers following all UAE Ministry of Climate Change and Environment (MOCCAE) import regulations."
+    a: "We manage every part of the import process, including health checks, travel arrangements, and the necessary documentation, so your puppy arrives happy, healthy, and stress-free."
   },
   {
     q: "Will I see photos and health details first?",
-    a: "Yes! Before you confirm any reservation, you receive clear video footage, 4K photos, veterinary health certificates, and exact age/weight details of the puppy."
+    a: "Yes. Photos, videos, and health certificates are shared before your puppy travels, and our team sends real photos and health details directly on WhatsApp."
   },
   {
-    q: "Do you deliver across the UAE?",
-    a: "Yes, we offer discreet, hand-delivered white-glove courier service directly to your doorstep in Dubai, Abu Dhabi, Sharjah, and other emirates."
+    q: "Do you deliver?",
+    a: "Yes. We deliver within Dubai, and our trusted international cargo partners deliver puppies safely to loving homes all around the world."
   },
   {
     q: "Which breeds do you usually have?",
-    a: "We specialize in miniature and teacup designer breeds including Maltipoos, Teacup Pomeranians, Toy & Teacup Poodles, Cavapoos, and Shih Tzus."
+    a: "Breeds we regularly have include Maltipoo, Pomeranian, Poodle and Bichon, plus rare teacup lines such as Korean teacup poodles, Maltese, Pom and Yorkie."
   },
   {
     q: "Is there help after my puppy comes home?",
-    a: "Yes! We provide ongoing WhatsApp support for all puppy parents to guide you on diet transitions, crate training, grooming tips, and routine wellness."
+    a: "Yes. Our team is available 24/7 and offers advice on training, nutrition, and general care to ensure a smooth transition for you and your new furry friend."
   }
 ];

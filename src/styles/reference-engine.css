@@ -460,21 +460,19 @@
 
 .tp-note[data-revealed]{transition:rotate .5s var(--ease-pounce), translate .5s var(--ease-pounce), box-shadow .4s var(--ease-silk), scale .5s var(--ease-pounce)}
 
-.tp-notes{grid-template-columns:minmax(15rem,21rem) minmax(0,1fr);align-items:start;gap:clamp(2rem,4vw,4rem)}
+@media (min-width: 1024px) {
+  .tp-notes { grid-template-columns: minmax(15rem, 21rem) minmax(0, 1fr); align-items: start; gap: clamp(2rem, 4vw, 4rem); }
+  .tp-notes__side { top: calc(var(--header-h) + 2rem); position: sticky; }
+  .tp-note:nth-child(odd) { --shift: -1.4rem; }
+  .tp-note:nth-child(2n) { --shift: 1.4rem; }
+}
 
-.tp-notes__side{top:calc(var(--header-h) + 2rem);position:sticky}
-
-.tp-note:nth-child(odd){--shift:-1.4rem}
-
-.tp-note:nth-child(2n){--shift:1.4rem}
-
-.tp-notes__side{grid-template-columns:minmax(0,1fr) auto;column-gap:1rem}
-
-.tp-notes__label,.tp-notes__search,.tp-notes__count{grid-column:1}
-
-.tp-notes__teddy{grid-area:1/2/span 3;align-self:end;width:clamp(6.5rem,26vw,8.5rem);margin:0 1.2rem 0 0}
-
-.tp-notes__ask{grid-column:1/-1}
+@media (max-width: 1023px) {
+  .tp-notes__side { grid-template-columns: minmax(0, 1fr) auto; column-gap: 1rem; }
+  .tp-notes__label, .tp-notes__search, .tp-notes__count { grid-column: 1; }
+  .tp-notes__teddy { grid-area: 1/2/span 3; align-self: end; width: clamp(6.5rem, 26vw, 8.5rem); margin: 0 1.2rem 0 0; }
+  .tp-notes__ask { grid-column: 1/-1; }
+}
 
 /* =========================================================================
    DOORS & FEATURED PUPPIES
@@ -1233,5 +1231,36 @@ html[data-pup] .tp-home[data-visited=true] .tp-house__door{transform:rotateY(-10
 .tp-flight__wing--far{fill:var(--color-toffee-deep)}
 .tp-flight__line{fill:none;stroke:var(--color-cocoa);stroke-width:3.5px;stroke-linecap:round}
 .tp-flight__porthole{fill:none;stroke:var(--color-cocoa);stroke-width:4px}
-@media (min-width:1024px){.tp-flight{width:86%}}
+/* Notes / FAQ Board styles */
+.tp-scene {
+  --ink: var(--color-cocoa);
+  --ink-soft: var(--color-cocoa-soft);
+  color: var(--ink);
+  background: linear-gradient(to bottom, var(--sky-top), var(--sky-bottom));
+  position: relative;
+}
+.tp-scene[data-tone="dark"] {
+  --ink: var(--color-milk);
+  --ink-soft: #fffdf8cc;
+}
+.tp-scene[data-tone="dark"] .btn-ghost {
+  border-color: var(--color-milk);
+  color: var(--color-milk);
+}
+.tp-scene[data-tone="dark"] .btn-ghost:hover {
+  background: var(--color-milk);
+  color: var(--color-cocoa);
+}
+.tp-faqroom::before {
+  content: "";
+  aspect-ratio: 1.6 / 1;
+  pointer-events: none;
+  background: radial-gradient(closest-side, rgba(255, 214, 140, 0.42), rgba(255, 214, 140, 0.12) 55%, rgba(0, 0, 0, 0));
+  width: min(80rem, 140vw);
+  position: absolute;
+  top: 18rem;
+  left: 50%;
+  translate: -38%;
+}
+
 
