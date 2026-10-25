@@ -80,7 +80,7 @@ export default function Header() {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/contact" className="tp-nav-link" data-active={location.pathname === '/contact' ? "true" : "false"}>
+              <NavLink to="/contact" className="tp-nav-link" data-active={(location.pathname === '/contact' || location.pathname === '/visit') ? "true" : "false"}>
                 <span>Visit & contact</span>
                 <PawIcon className="tp-nav-link__paw" />
               </NavLink>
