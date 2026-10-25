@@ -1,8 +1,70 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function HowItWorks() {
   const [activeTab, setActiveTab] = useState('local'); // 'local' | 'imported'
+  const flightContainerRef = useRef(null);
+  const flightRouteRef = useRef(null);
+  const flightPlaneRef = useRef(null);
+
+  useEffect(() => {
+    const container = flightContainerRef.current;
+    const path = flightRouteRef.current;
+    const plane = flightPlaneRef.current;
+    if (!container || !path || !plane) return;
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const updatePlanePosition = (progress) => {
+      const totalLen = path.getTotalLength();
+      const l = Math.min(totalLen, Math.max(0, progress * totalLen));
+      const pt = path.getPointAtLength(l);
+      const nextPt = path.getPointAtLength(Math.min(totalLen, l + 1));
+      const prevPt = path.getPointAtLength(Math.max(0, l - 1));
+      const angle = (180 * Math.atan2(nextPt.y - prevPt.y, nextPt.x - prevPt.x)) / Math.PI;
+
+      plane.setAttribute('transform', `translate(${pt.x.toFixed(1)} ${pt.y.toFixed(1)}) rotate(${angle.toFixed(1)})`);
+      // Fade in smoothly as plane takes off
+      plane.style.opacity = String(Math.min(1, Math.max(0, (progress - 0.11) / 0.06)));
+    };
+
+    if (prefersReducedMotion) {
+      updatePlanePosition(0.62);
+      return;
+    }
+
+    let rafId = null;
+
+    const onScroll = () => {
+      if (rafId) return;
+      rafId = requestAnimationFrame(() => {
+        rafId = null;
+        if (!flightContainerRef.current || !flightRouteRef.current || !flightPlaneRef.current) return;
+
+        // Offset matches Framer Motion ["start 95%", "end 25%"]
+        // Progress 0 when container top touches 95% of viewport height
+        // Progress 1 when container bottom touches 25% of viewport height
+        const rect = flightContainerRef.current.getBoundingClientRect();
+        const startY = window.innerHeight * 0.95;
+        const endY = window.innerHeight * 0.25;
+        const totalDistance = (rect.height + (startY - endY));
+        const currentDistance = startY - rect.top;
+
+        const progress = Math.min(1, Math.max(0, currentDistance / totalDistance));
+        updatePlanePosition(progress);
+      });
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    onScroll();
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+      if (rafId) cancelAnimationFrame(rafId);
+    };
+  }, []);
 
   return (
     <div data-page="how" className="tp-page">
@@ -469,14 +531,14 @@ export default function HowItWorks() {
                   strokeLinejoin="round"
                 ></path>
               </svg>
-              <div className="tp-flight">
+              <div ref={flightContainerRef} className="tp-flight">
                 <svg viewBox="0 0 660 300" role="img" aria-label="A plane flying puppies from Korea to Dubai">
-                  <path d="M40 250 C 170 40, 470 20, 620 168" className="tp-flight__route"></path>
+                  <path ref={flightRouteRef} d="M40 250 C 170 40, 470 20, 620 168" className="tp-flight__route"></path>
                   <circle cx="40" cy="250" r="7" className="tp-flight__dot"></circle>
                   <circle cx="620" cy="168" r="7" className="tp-flight__dot"></circle>
                   <text x="40" y="284" textAnchor="middle" className="tp-flight__label">Korea</text>
                   <text x="620" y="202" textAnchor="middle" className="tp-flight__label">Dubai</text>
-                  <g transform="translate(410 70)">
+                  <g ref={flightPlaneRef} transform="translate(40 250) rotate(-58.1)" style={{ opacity: 0 }}>
                     <g transform="translate(-126 -78)">
                       <path d="M28 60 L8 26 L34 26 L60 54 Z" className="tp-flight__wing"></path>
                       <path d="M108 112 L142 156 L172 156 L158 112 Z" className="tp-flight__wing tp-flight__wing--far"></path>
