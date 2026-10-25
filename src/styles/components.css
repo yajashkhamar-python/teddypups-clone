@@ -5,12 +5,26 @@
   left: 0;
   right: 0;
   height: var(--header-h);
-  background-color: var(--honey);
-  border-bottom: 2px solid var(--cocoa);
   z-index: 90;
   display: flex;
   flex-direction: column;
-  transition: transform 0.25s ease, background-color 0.2s ease;
+  transition: transform 0.5s var(--ease-silk);
+}
+
+.tp-header:before {
+  content: "";
+  background: var(--color-milk, #fffdf8);
+  opacity: 0;
+  transition: opacity 0.35s;
+  position: absolute;
+  inset: 0;
+}
+
+.tp-header[data-scrolled="true"]:before,
+.tp-header:not([data-home]):before,
+.tp-header[data-scrolled="true"] .tp-header__hem,
+.tp-header:not([data-home]) .tp-header__hem {
+  opacity: 1;
 }
 
 .tp-header__bar {
@@ -18,6 +32,9 @@
   align-items: center;
   justify-content: space-between;
   height: 100%;
+  max-width: 110rem;
+  margin-inline: auto;
+  position: relative;
 }
 
 .tp-header__brand {

@@ -46,7 +46,7 @@ export default function HappyFamilies() {
   const currentPhoto = activePhotoIndex !== null ? happyFamilies[activePhotoIndex] : null;
 
   return (
-    <div data-page="families" className="tp-page" style={{ paddingTop: 'var(--header-h, 5.25rem)' }}>
+    <div data-page="families" className="tp-page">
       <section aria-labelledby="families-title" className="tp-memories">
         <div className="gutter mx-auto max-w-[110rem] pb-24 pt-10 md:pt-16">
           {/* Header Banner */}

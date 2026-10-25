@@ -17,7 +17,7 @@ export default function App() {
     <>
       <CurtainIntro />
       <Header />
-      <main style={{ flex: '1 0 auto' }}>
+      <main id="main" tabIndex="-1" className="relative pt-[var(--header-h)] outline-none" style={{ flex: '1 0 auto' }}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/puppies" element={<Puppies />} />
