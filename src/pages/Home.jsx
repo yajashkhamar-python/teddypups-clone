@@ -6,6 +6,7 @@ import PuppyCard from '../components/PuppyCard';
 import { PawIcon } from '../components/Header';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { useMeetScroll } from '../hooks/useMeetScroll';
+import { useHomeFlight } from '../hooks/useHomeFlight';
 
 export default function Home() {
   const [activeFaq, setActiveFaq] = useState(null);
@@ -13,6 +14,7 @@ export default function Home() {
 
   useScrollReveal();
   useMeetScroll();
+  useHomeFlight();
 
   useEffect(() => {
     // If curtain intro is playing, set here to false until lifted
